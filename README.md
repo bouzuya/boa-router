@@ -2,6 +2,12 @@
 
 A routing library for [bouzuya/b-o-a][].
 
+## Installation
+
+```
+$ npm install https://github.com/bouzuya/boajs-router/archive/0.1.0.tar.gz
+```
+
 ## Badges
 
 [![Circle CI][badge-image-url]][badge-url]
