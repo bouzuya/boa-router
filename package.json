@@ -28,6 +28,9 @@
     "typings": "0.7.8",
     "watch": "0.17.1"
   },
+  "files": [
+    "lib"
+  ],
   "homepage": "https://github.com/bouzuya/boajs-router#readme",
   "keywords": [],
   "license": "MIT",
@@ -43,7 +46,7 @@
     "md1": "[ -d .tmp/src ] || mkdir -p .tmp/src",
     "md2": "[ -d lib ] || mkdir lib",
     "prebuild": "parallelshell 'npm run md1' 'npm run md2'",
-    "prepublish": "typings install",
+    "prepublish": "typings install && npm run clean && npm run build",
     "test": "ava",
     "watch": "parallelshell 'tsc --watch' 'npm run watch-cp' 'ava --watch'",
     "watch-cp": "watch --ignoreUnreadable --wait 5 'npm run cp' .tmp/src/"
