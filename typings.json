@@ -1,0 +1,8 @@
+{
+  "name": "boajs-router",
+  "version": false,
+  "dependencies": {},
+  "ambientDependencies": {
+    "path-to-regexp": "registry:dt/path-to-regexp#1.0.3+20151108025356"
+  }
+}
