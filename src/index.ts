@@ -4,28 +4,31 @@ export interface Route {
   path: string;
 }
 
-export interface Result {
-  route: Route;
+export interface Result<T extends Route> {
+  route: T;
   params: { [name: string]: string; };
 }
 
-export interface Router {
-  (path: string): Result;
+export interface Router<T extends Route> {
+  (path: string): Result<T>;
 }
 
-interface CompiledRoute {
+interface CompiledRoute<T extends Route> {
   keys: { name: string; }[];
   regexp: RegExp;
-  route: Route;
+  route: T;
 }
 
-const compile = (route: Route): CompiledRoute => {
+const compile = <T extends Route>(route: T): CompiledRoute<T> => {
   const keys: any[] = [];
   const regexp = pathToRegexp(route.path, keys);
   return { keys, regexp, route };
 };
 
-const match = (compiled: CompiledRoute, path: string): Result => {
+const match = <T extends Route>(
+  compiled: CompiledRoute<T>,
+  path: string
+): Result<T> => {
   const { keys, regexp, route } = compiled;
   const match = regexp.exec(path);
   if (!match) return null;
@@ -36,9 +39,9 @@ const match = (compiled: CompiledRoute, path: string): Result => {
   return { route, params };
 };
 
-const init = (routes: Route[]): Router => {
-  const compiledRoutes: CompiledRoute[] = routes.map(compile);
-  return (path: string): Result => {
+const init = <T extends Route>(routes: T[]): Router<T> => {
+  const compiledRoutes: CompiledRoute<T>[] = routes.map(compile);
+  return (path: string): Result<T> => {
     for (var i = 0; i < compiledRoutes.length; i++) {
       const compiled = compiledRoutes[i];
       const result = match(compiled, path);
