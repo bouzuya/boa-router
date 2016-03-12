@@ -31,7 +31,7 @@
   "homepage": "https://github.com/bouzuya/boajs-router#readme",
   "keywords": [],
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/bouzuya/boajs-router"
@@ -47,5 +47,6 @@
     "test": "ava",
     "watch": "parallelshell 'tsc --watch' 'npm run watch-cp' 'ava --watch'",
     "watch-cp": "watch --ignoreUnreadable --wait 5 'npm run cp' .tmp/src/"
-  }
+  },
+  "typings": "lib/index.d.ts"
 }
