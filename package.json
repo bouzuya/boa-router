@@ -1,0 +1,51 @@
+{
+  "name": "boajs-router",
+  "description": "boajs-router",
+  "version": "0.0.0",
+  "author": {
+    "name": "bouzuya",
+    "email": "m@bouzuya.net",
+    "url": "http://bouzuya.net"
+  },
+  "ava": {
+    "files": [
+      ".tmp/test"
+    ],
+    "source": [
+      "!**/*.js"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/bouzuya/boajs-router/issues"
+  },
+  "dependencies": {
+    "path-to-regexp": "1.2.1"
+  },
+  "devDependencies": {
+    "ava": "0.13.0",
+    "parallelshell": "2.0.0",
+    "typescript": "1.8.7",
+    "typings": "0.7.8",
+    "watch": "0.17.1"
+  },
+  "homepage": "https://github.com/bouzuya/boajs-router#readme",
+  "keywords": [],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bouzuya/boajs-router"
+  },
+  "scripts": {
+    "build": "tsc && npm run cp",
+    "clean": "rm -rf lib/ .tmp/ dist/",
+    "cp": "cp -R .tmp/src/* lib/",
+    "md1": "[ -d .tmp/src ] || mkdir -p .tmp/src",
+    "md2": "[ -d lib ] || mkdir lib",
+    "prebuild": "parallelshell 'npm run md1' 'npm run md2'",
+    "prepublish": "typings install",
+    "test": "ava",
+    "watch": "parallelshell 'tsc --watch' 'npm run watch-cp' 'ava --watch'",
+    "watch-cp": "watch --ignoreUnreadable --wait 5 'npm run cp' .tmp/src/"
+  }
+}
