@@ -5,7 +5,7 @@ A routing library for [bouzuya/b-o-a][].
 ## Installation
 
 ```
-$ npm install https://github.com/bouzuya/boajs-router/archive/0.1.0.tar.gz
+$ npm install boajs-router
 ```
 
 ## Badges
