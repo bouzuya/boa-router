@@ -1,6 +1,6 @@
 {
   "name": "boajs-router",
-  "description": "boajs-router",
+  "description": "A router library for b-o-a",
   "version": "0.1.0",
   "author": {
     "name": "bouzuya",
