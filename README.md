@@ -8,6 +8,22 @@ A routing library for [bouzuya/b-o-a][].
 $ npm install boajs-router
 ```
 
+## Usage
+
+```typescript
+import { init } from 'boajs-router';
+const routes = [
+  { path: '/users' },
+  { path: '/users/:id' }
+];
+const router = init(routes);
+const matched = router('/users/123');
+// { route: { path: '/users/:id' }, params: { id: '123' } }
+
+const notMatched = router('/items');
+// null
+```
+
 ## Badges
 
 [![Circle CI][badge-image-url]][badge-url]
