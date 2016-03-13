@@ -1,5 +1,5 @@
 import test from 'ava';
-import { init, Result, Route, Router } from '../src/';
+import { init, MatchedRoute, Route, Router } from '../src/';
 
 test(t => {
   const router1: Router = init([]);
@@ -10,7 +10,7 @@ test(t => {
   const route1: Route = { path: '/' };
   const router1: Router = init([route1]);
   const actual = router1('/');
-  const expected: Result = { route: route1, params: {} };
+  const expected: MatchedRoute = { route: route1, params: {} };
   t.same(actual, expected);
 });
 
@@ -19,7 +19,7 @@ test(t => {
   const route1 = { path: '/', name: 'root' };
   const router1 = init([route1]);
   const actual = router1('/');
-  const expected: { [x: string]: any } = { route: route1, params: {} };
+  const expected: MatchedRoute = { route: route1, params: {} };
   t.same(actual, expected);
 });
 

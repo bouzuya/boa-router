@@ -5,13 +5,13 @@ export interface Route {
   [x: string]: any;
 }
 
-export interface Result {
+export interface MatchedRoute {
   route: Route;
   params: { [name: string]: string; };
 }
 
 export interface Router {
-  (path: string): Result;
+  (path: string): MatchedRoute; // MatchedRoute?
 }
 
 interface CompiledRoute {
@@ -29,7 +29,7 @@ const compile = (route: Route): CompiledRoute => {
 const match = (
   compiled: CompiledRoute,
   path: string
-): Result => {
+): MatchedRoute => {
   const { keys, regexp, route } = compiled;
   const match = regexp.exec(path);
   if (!match) return null;
@@ -42,7 +42,7 @@ const match = (
 
 const init = (routes: Route[]): Router => {
   const compiledRoutes: CompiledRoute[] = routes.map(compile);
-  return (path: string): Result => {
+  return (path: string): MatchedRoute => {
     for (var i = 0; i < compiledRoutes.length; i++) {
       const compiled = compiledRoutes[i];
       const result = match(compiled, path);
