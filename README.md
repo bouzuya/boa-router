@@ -1,6 +1,8 @@
 # boa-router
 
-A routing library for [bouzuya/b-o-a][].
+A routing library for [b-o-a][bouzuya/b-o-a].
+
+[bouzuya/b-o-a]: https://github.com/bouzuya/b-o-a
 
 ## Installation
 
@@ -39,6 +41,5 @@ const notMatched = router('/items');
 [user]: https://github.com/bouzuya
 [email]: mailto:m@bouzuya.net
 [url]: http://bouzuya.net
-[bouzuya/b-o-a]: https://github.com/bouzuya/b-o-a
 [badge-image-url]: https://circleci.com/gh/bouzuya/boa-router.svg?style=svg
 [badge-url]: https://circleci.com/gh/bouzuya/boa-router
