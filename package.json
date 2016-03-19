@@ -32,7 +32,10 @@
     "lib"
   ],
   "homepage": "https://github.com/bouzuya/boa-router#readme",
-  "keywords": [],
+  "keywords": [
+    "b-o-a",
+    "boa"
+  ],
   "license": "MIT",
   "main": "lib/index.js",
   "repository": {
