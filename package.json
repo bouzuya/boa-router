@@ -1,5 +1,5 @@
 {
-  "name": "boajs-router",
+  "name": "boa-router",
   "description": "A router library for b-o-a",
   "version": "0.3.0",
   "author": {
@@ -16,7 +16,7 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/bouzuya/boajs-router/issues"
+    "url": "https://github.com/bouzuya/boa-router/issues"
   },
   "dependencies": {
     "path-to-regexp": "1.2.1"
@@ -31,13 +31,13 @@
   "files": [
     "lib"
   ],
-  "homepage": "https://github.com/bouzuya/boajs-router#readme",
+  "homepage": "https://github.com/bouzuya/boa-router#readme",
   "keywords": [],
   "license": "MIT",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bouzuya/boajs-router"
+    "url": "https://github.com/bouzuya/boa-router"
   },
   "scripts": {
     "build": "tsc && npm run cp",

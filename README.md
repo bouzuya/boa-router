@@ -1,17 +1,17 @@
-# boajs-router
+# boa-router
 
 A routing library for [bouzuya/b-o-a][].
 
 ## Installation
 
 ```
-$ npm install boajs-router
+$ npm install boa-router
 ```
 
 ## Usage
 
 ```typescript
-import { init } from 'boajs-router';
+import { init } from 'boa-router';
 const routes = [
   { path: '/users' },
   { path: '/users/:id' }
@@ -40,5 +40,5 @@ const notMatched = router('/items');
 [email]: mailto:m@bouzuya.net
 [url]: http://bouzuya.net
 [bouzuya/b-o-a]: https://github.com/bouzuya/b-o-a
-[badge-image-url]: https://circleci.com/gh/bouzuya/boajs-router.svg?style=svg
-[badge-url]: https://circleci.com/gh/bouzuya/boajs-router
+[badge-image-url]: https://circleci.com/gh/bouzuya/boa-router.svg?style=svg
+[badge-url]: https://circleci.com/gh/bouzuya/boa-router
